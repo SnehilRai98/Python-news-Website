@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Clean, modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styling */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white; /* Change to white for better visibility in dark mode */
+    background-color: #1e1e1e; /* Dark background for the logo */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* News Bulletin */
+.news-bulletin {
+    background-color: #ff4d4d; /* Gen Z bright red */
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    margin: 30px 0 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+label {
+    align-self: flex-start;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+select,
+input {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 320px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.2);
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    background-color: #0e0e0e; /* Black background */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 220px;
+}
+
+button:hover {
+    background-color: #1558b2; /* Change hover effect */
+    transform: scale(1.05);
+}
+
+/* News Cards */
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    background-color: #f7f7f7; /* Light background for readability */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Ensure only 3 cards per row */
+    color: #333;
+    transition: transform 0.3s, opacity 0.3s; /* Transition for transform and opacity */
+    text-align: left; /* Align text left */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Read More Button */
+.read-more {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfectly center the button */
+    background-color: rgba(0, 0, 0, 0.85); /* Dark button */
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    opacity: 0.9; /* Increased opacity */
+    transition: opacity 0.3s;
+}
+
+/* Hover Effects */
+.card:hover {
+    opacity: 0.9; /* Fade effect on hover */
+    transform: scale(1.05); /* Card pops up */
+}
+
+.card:hover .read-more {
+    display: block; /* Show Read More button on hover */
+    opacity: 1; /* Full opacity */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode h1 {
+    background-color: #1e1e1e; /* Keep dark background for header */
+}
+
+body.dark-mode .news-bulletin {
+    background-color: #d9534f; /* Change bulletin background */
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e; /* Dark background for cards */
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .read-more {
+    background-color: rgba(255, 255, 255, 0.75); /* Lighten the button in dark mode */
+}
