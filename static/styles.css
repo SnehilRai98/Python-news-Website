@@ -19,15 +19,16 @@ body {
 /* Header Styling */
 h1 {
     font-family: 'Poppins', sans-serif;
-    color: white; /* Change to white for better visibility in dark mode */
-    background-color: #1e1e1e; /* Dark background for the logo */
+    color: white;
+    background-color: #1e1e1e;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    font-size: 2.2em;
+    font-size: 2em;
     font-weight: 700;
     letter-spacing: 1px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
 }
 
 /* News Bulletin */
@@ -64,7 +65,8 @@ input {
     border: 2px solid #ddd;
     border-radius: 10px;
     font-size: 1em;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     color: #333;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -78,18 +80,19 @@ select:focus {
 /* Button Styling */
 button {
     padding: 12px 20px;
-    background-color: #0e0e0e; /* Black background */
+    background-color: #0e0e0e;
     color: white;
     border: none;
     border-radius: 12px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    width: 220px;
+    width: 100%;
+    max-width: 220px;
 }
 
 button:hover {
-    background-color: #1558b2; /* Change hover effect */
+    background-color: #1558b2;
     transform: scale(1.05);
 }
 
@@ -103,43 +106,42 @@ button:hover {
 
 .card {
     position: relative;
-    background-color: #f7f7f7; /* Light background for readability */
+    background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px); /* Ensure only 3 cards per row */
+    width: calc(33% - 20px);
     color: #333;
-    transition: transform 0.3s, opacity 0.3s; /* Transition for transform and opacity */
-    text-align: left; /* Align text left */
-    overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.3s, opacity 0.3s;
+    text-align: left;
+    overflow: hidden;
 }
 
-/* Read More Button */
 .read-more {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfectly center the button */
-    background-color: rgba(0, 0, 0, 0.85); /* Dark button */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85);
     color: white;
     padding: 10px 16px;
     border-radius: 8px;
     font-weight: 500;
-    opacity: 0.9; /* Increased opacity */
+    opacity: 0.9;
     transition: opacity 0.3s;
 }
 
 /* Hover Effects */
 .card:hover {
-    opacity: 0.9; /* Fade effect on hover */
-    transform: scale(1.05); /* Card pops up */
+    opacity: 0.9;
+    transform: scale(1.05);
 }
 
 .card:hover .read-more {
-    display: block; /* Show Read More button on hover */
-    opacity: 1; /* Full opacity */
+    display: block;
+    opacity: 1;
 }
 
 /* Dark Mode Styles */
@@ -149,19 +151,51 @@ body.dark-mode {
 }
 
 body.dark-mode h1 {
-    background-color: #1e1e1e; /* Keep dark background for header */
+    background-color: #1e1e1e;
 }
 
 body.dark-mode .news-bulletin {
-    background-color: #d9534f; /* Change bulletin background */
+    background-color: #d9534f;
 }
 
 body.dark-mode .card {
-    background-color: #1e1e1e; /* Dark background for cards */
+    background-color: #1e1e1e;
     border-color: #333;
     color: #e0e0e0;
 }
 
 body.dark-mode .read-more {
-    background-color: rgba(255, 255, 255, 0.75); /* Lighten the button in dark mode */
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        padding: 12px;
+    }
+
+    .card {
+        width: calc(50% - 20px); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    .news-bulletin {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .card {
+        width: 100%; /* 1 card per row on smartphones */
+    }
+
+    button {
+        width: 100%; /* Full width buttons on mobile */
+    }
 }
