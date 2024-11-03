@@ -112,5 +112,6 @@ def index():
         selected_category=category,
         search_keywords=search_keywords,
     )
-
+if __name__ == "__main__":
+    app.run(debug=True)
 
