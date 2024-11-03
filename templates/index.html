@@ -11,14 +11,19 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 8px 12px;
+            padding: 5px; /* Smaller padding */
+            width: 36px; /* Fixed width */
+            height: 36px; /* Fixed height */
             background-color: black;
             color: white;
             border: none;
-            border-radius: 10px;
-            font-size: 0.9em;
+            border-radius: 50%; /* Circular button */
+            font-size: 0.8em; /* Smaller font size */
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .toggle-button:hover {
             background-color: #444;
@@ -60,7 +65,7 @@
         </div>
 
         <!-- Dark Mode Toggle Button -->
-        <button class="toggle-button" id="toggle-button">Toggle Dark Mode</button>
+        <button class="toggle-button" id="toggle-button">🌙</button>
 
         <!-- News Bulletin -->
         <div class="news-bulletin">
