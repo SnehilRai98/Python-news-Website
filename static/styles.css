@@ -1,201 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Poppins:wght@300;400;600&family=Inter:wght@400;600&display=swap');
+
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif; /* Clean, modern font */
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
+    background-color: #f8f9fa;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Container */
 .container {
-    max-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Header Styling */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
+/* Logo Section */
+.logo-background {
     text-align: center;
-    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* THE INFORMANT Title */
+#typewriter-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 3.5em;
     font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    max-width: 100%;
+    color: #0f1011;
+    margin: 0;
+    text-align: center;
+}
+
+/* Subheading with Typewriter Effect */
+#typewriter-subtitle {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5em;
+    color: #0f1011;
+    margin: 10px 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    min-width: 350px; /* Prevents shifting */
+    height: 1.5em;
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #242222;
+    color: #e0e0e0;
+}
+
+/* Dark Mode - Title & Subtitle */
+body.dark-mode #typewriter-title,
+body.dark-mode #typewriter-subtitle {
+    color: white;
+}
+
+/* Dark Mode Toggle */
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.toggle-button:hover {
+    background: #1a252f;
+    transform: scale(1.1);
 }
 
 /* News Bulletin */
 .news-bulletin {
-    background-color: #ff4d4d; /* Gen Z bright red */
-    color: #ffffff;
+    background: #e74c3c;
+    color: white;
     padding: 10px;
     width: 100%;
     text-align: center;
     font-size: 1.1em;
     font-weight: 600;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-/* Form Styling */
+/* Dark Mode - News Bulletin */
+body.dark-mode .news-bulletin {
+    background: #d32f2f;
+}
+
+/* Form */
 form {
-    margin: 30px 0 20px;
-    width: 100%;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-}
-
-label {
-    align-self: flex-start;
-    font-size: 1em;
-    font-weight: 500;
-}
-
-select,
-input {
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 1em;
+    gap: 15px;
     width: 100%;
-    max-width: 320px;
-    color: #333;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    max-width: 400px;
 }
 
-input:focus,
-select:focus {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 8px rgba(255, 77, 77, 0.2);
+select, input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1em;
+    transition: border-color 0.3s;
 }
 
-/* Button Styling */
+select:focus, input:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
 button {
     padding: 12px 20px;
-    background-color: #0e0e0e;
+    background: #2c3e50;
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: 0.3s;
     width: 100%;
-    max-width: 220px;
 }
 
 button:hover {
-    background-color: #1558b2;
+    background: #1a252f;
     transform: scale(1.05);
 }
 
 /* News Cards */
 .news-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
 }
 
+/* News Card Style */
 .card {
-    position: relative;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
+    background: white;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px);
-    color: #333;
-    transition: transform 0.3s, opacity 0.3s;
     text-align: left;
-    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.read-more {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    opacity: 0.9;
-    transition: opacity 0.3s;
-}
-
-/* Hover Effects */
 .card:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover .read-more {
-    display: block;
-    opacity: 1;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode h1 {
-    background-color: #1e1e1e;
-}
-
-body.dark-mode .news-bulletin {
-    background-color: #d9534f;
-}
-
+/* Dark Mode - News Card */
 body.dark-mode .card {
-    background-color: #1e1e1e;
-    border-color: #333;
+    background: #2c3e50;
     color: #e0e0e0;
 }
 
-body.dark-mode .read-more {
-    background-color: rgba(255, 255, 255, 0.75);
+/* Dark Mode - Buttons */
+body.dark-mode button {
+    background: #e74c3c;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.8em;
-        padding: 12px;
-    }
-
-    .card {
-        width: calc(50% - 20px); /* 2 cards per row on tablets */
-    }
+body.dark-mode button:hover {
+    background: #d32f2f;
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-        padding: 10px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    #typewriter-title {
+        font-size: 3em;
+    }
+
+    #typewriter-subtitle {
+        font-size: 1.3em;
     }
 
     .news-bulletin {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    #typewriter-title {
+        font-size: 2.5em;
+    }
+
+    #typewriter-subtitle {
+        font-size: 1.2em;
+    }
+
+    .news-bulletin {
+        font-size: 0.9em;
         padding: 8px;
     }
 
+    .news-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
     .card {
-        width: 100%; /* 1 card per row on smartphones */
+        padding: 15px;
     }
 
     button {
-        width: 100%; /* Full width buttons on mobile */
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    #typewriter-title {
+        font-size: 2em;
+    }
+
+    #typewriter-subtitle {
+        font-size: 1em;
+    }
+
+    .news-bulletin {
+        font-size: 0.85em;
+        padding: 7px;
+    }
+
+    .news-cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    form {
+        max-width: 90%;
+    }
+
+    select, input, button {
+        font-size: 0.85em;
+        padding: 10px;
+    }
+
+    .toggle-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
     }
 }
